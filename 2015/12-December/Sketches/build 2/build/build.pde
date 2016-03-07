@@ -7,8 +7,6 @@ void setup() {
 }
 
 void draw() {
-  saveFrame("output2/frame#######.png");
-
   float n = noise(t);
   float colorsIndex = map(n, 0, 1, 0, 4);
 

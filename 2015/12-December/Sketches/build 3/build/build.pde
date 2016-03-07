@@ -1,6 +1,5 @@
 color [] colors = {#2D4059, #EA5455, #F07B3F, #FFD460}; // theme colours
 float t = 0; 
-
 float x;
 
 void setup() {
@@ -9,7 +8,6 @@ void setup() {
 }
 
 void draw() {
-  //saveFrame("output/frame#######.png");
 
   float n = noise(t);
   float colorsIndex = map(n, 0, 1, 0, 4);
@@ -22,4 +20,9 @@ void draw() {
   }  
   t+=0.01;
   x++;
+  for (int i = 0; i <= height; i+=2) {
+    stroke(colors[(int)random(colorsIndex)]);
+    line(mouseX, i, width, i);
+  }  
+  t+=0.01;
 }
